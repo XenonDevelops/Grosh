@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Grosh</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="images/grosh/icon.jpg" type="image/x-icon" rel="shortcut icon" />
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="http://localhost:8000/socket.io/socket.io.js"></script>
+		
+			
+		<noscript>
+			<link rel="stylesheet" href="css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		
+	</head>
+	<body>
+		<div id="wrapper">
+			<nav id="nav">
+				<a href="#me" class="icon fa-home active"><span>Home</span></a>
+				<a href="#work" class="fa fa-list-alt"><span>Work</span></a>
+				<a href="#contact" class="icon fa-envelope"><span>Contact</span></a>	
+				{% if name %}
+				<a href="/logout" class="icon fa-sign-out"><span>Log-out</span></a>
+				{% else %}
+				<a href="/auth/facebook" class="icon fa-facebook"><span>Login with <i class="icon fa-facebook"></i></span></a>
+				<a href="/auth/twitter" class="icon fa-twitter"><span>Login with</span></a>
+				<a href="#login" class="icon fa-sign-in"><span>Log-in</span></a>
+				{% endif %}
+			</nav>
+			
+			{% block content%}
+			{% endblock%}
+			
+		</div>
+		<div id="footer">
+			<ul class="copyright">
+				<li>&copy; XenonDev</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var socket = io();
+			socket.on('nuevoMensaje', function (data) {
+				console.log(data);
+				socket.emit('getMensaje', { my: 'respondiendo desde el cliente' });
+			});
+		</script>
+	</body>
+</html>
