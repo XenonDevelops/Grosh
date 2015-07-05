@@ -8,11 +8,12 @@ var requestSchema = new Schema({
     status         :{
                         type:String,
                         enum:[
-                            'En espera',
-                            'Aceptada',
-                            'Declinada'
+                            'en espera',
+                            'aceptada',
+                            'declinada'
                         ],
-                        required:true
+                        required:true,
+                        default:'En espera'
                     }
 });
 
