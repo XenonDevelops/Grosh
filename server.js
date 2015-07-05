@@ -64,6 +64,7 @@ require('./source/controllers/api/post')(server);
 require('./source/controllers/api/image')(server);
 require('./source/controllers/api/file')(server);
 require('./source/controllers/api/group')(server);
+require('./source/controllers/api/request')(server);
 //require('./source/connections/view-twitter')(server);
 //require('./source/connections/createTwit')('Hello twitter from #nodejs');
 //require('./app/connections/mail')(server);
