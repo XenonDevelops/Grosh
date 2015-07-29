@@ -11,13 +11,14 @@ var factory = function($http,localStorageService,formEncode,$state){
 
         var USERKEY = "user";
             var profile = {
+                _id:'',
                 name: '',
                 lastName:'',
                 email:'',
                 token: ''
             };
-        var setProfile = function (email,name,lastName, token) {
-
+        var setProfile = function (id,email,name,lastName, token) {
+            profile._id = id;
             profile.name = name;
             profile.lastName = lastName;
             profile.email = email;
@@ -27,6 +28,7 @@ var factory = function($http,localStorageService,formEncode,$state){
 
         var initialize = function () {
             var user = {
+                _id:'',
                 name: '',
                 lastName:'',
                 email:'',

@@ -53,7 +53,7 @@ var controller = function($scope,$state,userService,loginService){
 		if($scope.user.password !== '' && $scope.user.email !==''){
 			loginService.login($scope.user.email,$scope.user.password)
 		            .success(function(data, status, headers, config) {
-                       loginService.setProfile(data.email,data.name,
+                       loginService.setProfile(data.id,data.email,data.name,
                            data.last_name,
                            data.access_token);
                        $state.go('home');
@@ -66,9 +66,7 @@ var controller = function($scope,$state,userService,loginService){
 
 
 
-				                        
 
-                        
 			
  			
 		}else{

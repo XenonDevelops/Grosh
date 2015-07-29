@@ -218,7 +218,7 @@ module.exports = function(server) {
      */
     findByID = function(req, res) {
         User.findOne({
-            'email': req.params.email
+            '_id': req.params.id
         }, function(err, user) {
             if (!err)
                 res.send(user);
@@ -595,7 +595,7 @@ module.exports = function(server) {
 
     //API Routes
     server.get('/user', server.oauth.authorise(), findAllUsers);
-    server.get('/user/:email', server.oauth.authorise(), findByID);
+    server.get('/user/:id', server.oauth.authorise(), findByID);
     server.post('/user', addUser);
     server.put('/user/:id', server.oauth.authorise(), updateUser);
     server.patch('/userImage/:id/', server.oauth.authorise(), addURLImage);

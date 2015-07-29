@@ -3,20 +3,17 @@
 This array contains the name of the injected dependencies, this is for minification purposes
 */
 var dependencies = [
-	'$scope','$state','loginService'];
+	'$scope','$state','loginService','$rootScope'];
 /*
 The controller's functionality
 */
-var controller = function($scope,$state,loginService){
-    $scope.user = '';
+var controller = function($scope,$state,loginService,$rootScope){
+    $scope.user = loginService.getLoggedUser();
 
-    function getUser(){
-       var current = loginService.getLoggedUser();
-       if(current){
-         $scope.user = {name:current.name,lastName:current.lastName,email:current.email};
-       }
-    }
-    getUser();
+  $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams,fromState,fromParams){
+
+      $scope.user = loginService.getLoggedUser(); 
+  });
     $scope.closeThis = function () {
       if($scope.sideMenuOpen){
         $scope.sideMenuOpen = false;
@@ -27,6 +24,7 @@ var controller = function($scope,$state,loginService){
     $scope.menuBarActive = function(){
         if(loginService.loggedIn()){
               return 'menu-bar-active';
+              $scope.user = {name:current.name,lastName:current.lastName,email:current.email};
         }
         return 'menu-bar-inactive';
     }
@@ -50,6 +48,12 @@ var controller = function($scope,$state,loginService){
         $state.go('login');
       }
     }
+
+    $scope.viewProfile = function(){
+      $state.go('profile',{profile:$scope.user._id});
+    }
+
+
 }
 
 

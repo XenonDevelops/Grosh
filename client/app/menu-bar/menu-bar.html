@@ -42,7 +42,7 @@
             </li>
         </ul>
     </header>
-    <nav class="menu" ng-class="{'open':sideMenuOpen}">
+    <nav class="menu" ng-class="{'open':sideMenuOpen}" ng-class="menuBarActive()">
         <div class="menu-scroll" id="menu-container" click-outside="closeThis()" outside-if-not="menu-button">
             <div class="menu-wrap">
                 <div class="menu-top">
@@ -58,19 +58,23 @@
                 </div>
                 <div class="menu-content">
                     <ul class="nav">
-                        <li class="active">
+                        <li id="homeView">
                             <a ui-sref="home"><span class="icon icon-lg">home</span>Home</a>
                         </li>
-                        <li>
-                            <a href="javascript:void(0)"><span class="icon icon-lg">account_box</span>Profile</a>
+                        <li  id="profileView">
+                            <a ng-click="viewProfile()" href="javascript:void(0)"><span class="icon icon-lg">account_box</span>Profile</a>
                         </li>
-                        <li>
+                        <li  id="groupseView">
+                            <a ui-sref="myGroups" href="javascript:void(0)"><span class="icon icon-lg">group</span>My Groups</a>
+                        </li>
+
+                        <!--li id="gcloudView">
                             <a href="javascript:void(0)"><span class="icon icon-lg">language</span>G Cloud</a>
-                        </li>
-                        <li>
+                        </li-->
+                        <li id="settingsView">
                             <a ui-sref="settings"><span class="icon icon-lg">settings</span>Settings</a>
                         </li>
-                        <li>
+                        <li id="logoutView">
                             <a ng-click="logout()" href="javascript:void(0)"><span class="icon icon-lg">exit_to_app</span>Logout</a>
                         </li>
                     </ul>

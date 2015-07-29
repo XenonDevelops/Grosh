@@ -1,0 +1,63 @@
+<div class="content m-main" >
+    <div class="content-heading profile-header" ng-style="properties">
+<div class="form-group-btn btn-add-img" style="float:right" ng-show="isAdmin">
+        <a ui-sref=".addCover" class="btn waves-attach waves-button waves-effect" href="#/home"><span class="fbtn-ori icon">add_to_photos</span></a>                                
+        </div>
+        <div class="container profile-header-container">
+            <h2 class="heading profile-title ">{{currentGroup.name}}</h2>
+            <p class="heading txt-shadow">{{currentGroup.description}}</p>
+        </div>
+    </div>
+    <div class="container">  
+        <section class="content-inner ">
+            <div class="card-wrap ">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-card-form" ui-view>
+
+                    </div>
+                    <!--div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="card">
+                                <div class="card-main">
+                                    <div class="card-header">
+                                        <div class="card-header-side pull-left">
+                                            <div class="avatar">
+                                                <img alt="John Smith Avatar" src="images/users/avatar-001.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="card-inner">
+                                            <span>Some Text!</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-inner" style="margin-top: 10px;">
+                                        <p>
+                                               La verdad esque no se como decirles esto amigos mio, estamos jodidamente reprobados y todo es mi culpa; lo siento                                              
+                                        </p>
+                                    </div>
+                                    <div class="card-action">
+
+                                    <ul class="nav nav-list pull-right">
+                                        <li class="dropdown">
+                                            <a class="dropdown-toggle" data-toggle="dropdown"><span class="icon">more_vert</span></a>
+                                            <ul class="dropdown-menu">
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div-->
+
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<div class="fbtn-container">
+    <div class="fbtn-inner">
+        <a ui-sref="group.newPost" class="fbtn fbtn-red fbtn-lg btn-grosh-circular">
+         <span class="fbtn-ori icon">edit</span>
+         <span class="fbtn-text">Post Something!</span>
+        </a>
+    </div>
+</div>

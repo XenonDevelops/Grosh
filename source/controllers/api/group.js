@@ -541,12 +541,12 @@ module.exports = function(server) {
         var newGroup = new Group({
             name            :req.body.name,
             description     :req.body.description,
-            date_creation   :currentdate,
+            create_date   :currentdate,
             url_image       :req.body.url_image,
             privileges      :req.body.privileges,
             administrators  :[]
         });
-        newGroup.administrators.push(userAdmin);
+        newGroup.administrators.push(req.user.id);
         newGroup.save(function(err) {
             if(!err) 
                 console.log('Group Successfully Saved');

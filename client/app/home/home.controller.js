@@ -3,15 +3,13 @@
 This array contains the name of the injected dependencies, this is for minification purposes
 */
 var dependencies = [
-	'$scope','userService','loginService'];
+	'$scope','userService','loginService','$state'];
 /*
 The controller's functionality
 */
-var controller = function($scope,userService,loginService){
+var controller = function($scope,userService,loginService,$state){
 	var html = document.querySelector('html');
 	html.id = 'home'
-
-
 
 
 

@@ -305,3 +305,108 @@ header{
   width: 70%;
   }
 }
+
+
+.profile-header{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.group-card{
+    padding-bottom: 120px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.options-card{
+      position: absolute;
+    top: -24px;
+        right: 0;
+            background-color: rgba(0, 0, 0, 0.1);
+}
+
+.options-card a{
+  color: #fff;
+}
+
+
+.btn-add-img{
+  float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.btn-add-img a{
+    background-color: rgba(4, 4, 4, 0.1);
+    font-size: 23px;
+    box-shadow: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.profile-header-container{
+      padding-top: 110px;
+      margin-bottom: -20px;
+}
+
+.profile-title {
+ text-shadow: 0 1px 0 black;
+}
+
+.profile-image{
+  border-radius: 50%;
+  position:absolute;
+  z-index:9;
+  margin: 0 auto;
+  top:165px;
+  right:20px;
+  height: 180px;
+}
+
+.container-profile{
+  margin-top:60px;
+}
+
+
+
+@media screen and (max-width: 480px) {
+  .profile-image {
+    top: 200px;
+    right: 20px;
+    height: 130px;
+  }
+  .profile-title{
+    font-size: 24px;
+  }
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 1023px) {
+.profile-image{
+}
+}
+
+@media screen and (min-width: 1024px) {
+.profile-image{
+    left:0;
+}
+}
+
+
+.active-profile{
+      background-color: #009688;
+      color:#fff!important;
+}
+
+
+
+.txt-shadow {
+ text-shadow: 0 1px 0 black;
+}
+
+.no-txt-shadow {
+ text-shadow: none;
+}

@@ -8,15 +8,11 @@ The controller's functionality
 */
 var factory = function($http){
 
-	function add(user){
+	function add(content,idUser,idGroup){
 			var data = {
 				name:user.name,
-				last_name:user.lastName,
-				email:user.email,
-				sex:user.gender,
-				password:user.password
 			}
-		    return $http.post('/user/',data);
+		    return $http.post('/post/',data);
 		    
 	}
 	function get(id){

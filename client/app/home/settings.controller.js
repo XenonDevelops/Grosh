@@ -11,7 +11,7 @@ var controller = function($scope,userService,loginService){
 	var html = document.querySelector('html');
 	html.id = 'home'
 	$scope.user = '';
-	userService.get(loginService.getLoggedUser().email)
+	userService.get(loginService.getLoggedUser()._id)
 		.success(function(data, status, headers, config) {
       		  $scope.user = data;
 		})
