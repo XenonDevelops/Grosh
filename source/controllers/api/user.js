@@ -577,6 +577,7 @@ module.exports = function(server) {
             administrators: admins
         });
 
+
         newGroup.save(function(err) {
             if (err) {
                 console.log('ERROR: ' + err);
